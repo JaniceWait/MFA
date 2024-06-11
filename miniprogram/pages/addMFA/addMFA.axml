@@ -1,0 +1,26 @@
+<view>
+<container>
+  <ant-form-input
+  label="请输入用户名"
+  name="account"
+  required
+  position="horizontal"
+  ref="handleRef" />
+
+<ant-form-input
+  label="请输入密钥"
+  name="secret"
+  required
+  position="horizontal"
+  ref="handleRef" />
+
+</container>
+<view class="buttons">
+  <ant-button
+    type="primary"
+    onTap="submit"
+    className="button">
+    提交
+  </ant-button>
+</view>
+</view>

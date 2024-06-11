@@ -1,0 +1,22 @@
+{
+  "usingComponents": {
+    "list": "antd-mini/es/List/index",
+    "list-item": "antd-mini/es/List/ListItem/index",
+    "icon": "antd-mini/es/Icon/index",
+    "switch": "antd-mini/es/Switch/index",
+    "tab-bar": "antd-mini/es/TabBar/index",
+    "container": "antd-mini/es/Container/index",
+    "ant-container": "antd-mini/es/Container/index",
+    "ant-button": "antd-mini/es/Button/index",
+    "progress": "antd-mini/es/Progress/index",
+    "card":"../card/card/card",    
+    "ant-notice": "antd-mini/es/NoticeBar/index",
+    "button": "antd-mini/es/Button/index",
+    "popup": "antd-mini/es/Popup/index",
+    "empty": "antd-mini/es/Empty/index",
+    "ant-input": "antd-mini/es/Input/index",
+    "ant-icon": "antd-mini/es/Icon/index",
+    "ant-action-sheet": "antd-mini/es/ActionSheet/index"
+
+  }
+}

@@ -1,0 +1,23 @@
+.image {
+  background-color: transparent; /* 设置背景色为透明 */
+  width: 100px;
+  height: 100px;
+  
+  
+  
+}
+
+.logo{
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.text {
+  font-size: 40rpx; /* 自定义文字大小 */
+  margin-top: 20rpx; /* 调整文字与logo之间的间距 */
+  text-align: center; /* 让文字居中 */
+}

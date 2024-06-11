@@ -1,0 +1,54 @@
+<ant-container>
+  <view class="logo">
+    <image
+      class="image"
+      data-name="scaleToFill"
+      mode="scaleToFill"
+      src="../../image/logo.png"
+      onError="imageError"
+      onLoad="imageLoad"
+    />
+    <view class="text">{{copywriting.appTitle}}</view>
+  </view>
+  <view>
+    <ant-container title="">
+      <ant-list >
+        <ant-list-item image="UndoOutline" onTap="onSyncData" data-info="同步数据">
+          同步数据
+        </ant-list-item>
+        <ant-list-item image="ScanningFaceOutline">
+          开启人脸识别
+          <ant-switch slot="extra" checked="{{ configs.facial }}" onChange="onEnableFacialRecognition" />
+        </ant-list-item>
+        <ant-list-item
+          image="FillinOutline"
+          arrow="right"
+          onTap="showFeatureIntroduction"
+          data-info="功能介绍"
+        >
+          功能介绍
+        </ant-list-item>
+
+        <ant-list-item
+          image="InformationCircleOutline"
+          onTap="onClientVersion"
+          data-info="软件版本"
+        >
+          <view slot="extra">{{configs.version}}</view>
+          软件版本
+        </ant-list-item>
+
+        <ant-list-item
+          image="StarOutline"
+          arrow="right"
+          onTap="showAboutUs"
+          data-info="关于我们"
+        >
+          关于我们
+        </ant-list-item>
+
+
+      </ant-list>
+    </ant-container>
+  </view>
+</ant-container>

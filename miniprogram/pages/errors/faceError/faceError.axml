@@ -1,0 +1,15 @@
+<view class="demo-empty">
+
+  <ant-empty
+    title="人脸识别失败"
+    message="" >
+    <view slot="extra">
+      <ant-button
+        size="small"
+        onTap="onRetry"
+        inline>
+        重试
+      </ant-button>
+    </view>
+  </ant-empty>
+</view>

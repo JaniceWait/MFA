@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "ant-container": "antd-mini/es/Container/index",
+    "ant-icon": "antd-mini/es/Icon/index"
+  },
+  "navigationBarTitleText": "关于我们",
+  "styleIsolation": "apply-shared"
+}

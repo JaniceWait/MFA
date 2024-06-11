@@ -1,0 +1,53 @@
+<ant-container class="blue-rounded-view m" title="{{title}}">
+  <view class="font-size-code">{{code}}</view>
+  <view>
+    <progress
+    percent="{{progress}}" active-color="{{progress > 30 ? '#00B578': progress < 10 ? '#FF0000':'#FFCF9F'}}" stroke-width="3">
+  </progress>
+
+  </view>
+
+  <view slot="headerRight">
+    <view class="flex">
+      <popover
+      placement="bottom-right"
+      visible="{{ visible }}"
+      style="display: inline-block; margin: 20px"
+      onVisibleChange="handleVisibleChange"
+      color="#fff">
+      <am-icon type="MoreOutline" data-index="{{index}}" color="#1677ff" size="large"/>
+    
+      <list
+        slot="content"
+        className="popover">
+        <list-item
+          onTap="deleteItem" data-index="{{index}}">
+          删除
+        </list-item>
+        <list-item
+          onTap="handleShowButtonTap" data-index="{{index}}">
+          修改备注
+        </list-item>
+      </list>
+    </popover>
+    </view>
+  </view>
+
+</ant-container>
+
+<ant-modal
+  title="修改备注"
+  visible="{{ remarkVisible }}"
+  onClose="handleClose"
+  primaryButtonText="修改"
+  primaryButtonStyle="color:red;"
+  secondaryButtonText="取消"
+  onPrimaryButtonTap="submitEditRemark"
+  onSecondaryButtonTap="handleCancelButtonTap"
+  >
+  <view slot="content" class="modalContentStyle">
+    <ant-input defaultValue="{{title}}" data-index="{{index}}" onChange="handleEditRemarkRef" onConfirm="editRemark"></ant-input>
+  </view>
+
+  
+</ant-modal>

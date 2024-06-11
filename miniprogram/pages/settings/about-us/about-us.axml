@@ -1,0 +1,13 @@
+<view class="container">
+  <ant-container title="关于我们">
+    <view class="content">
+        <text class="description">
+          欢迎使用我们的应用程序！我们致力于为您提供最佳的用户体验和服务。如果您有任何问题或建议，请随时联系我们。
+          觉得不错，请给我们Star一下
+          码云地址: <text onTap="onTapGitee"></text>
+          github地址: <text onTap="onTapGithub"></text>
+        </text>
+      </view>
+    
+  </ant-container>
+</view>

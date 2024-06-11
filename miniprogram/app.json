@@ -1,0 +1,41 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/setting/setting",
+    "pages/addMFA/addMFA",
+    "pages/settings/about-us/about-us",
+    "pages/settings/feature-introduction/feature-introduction",
+    "pages/errors/faceError/faceError",
+    "pages/settings/gitee/gitee",
+    "pages/settings/github/github"
+  ],
+  "window": {
+    "defaultTitle": "在线MFA验证器",
+    "enableInPageRenderInput": "YES"
+  },
+  "appid": 2021004144649625,
+  "usingComponents": {
+    "icon": "antd-mini/es/Icon/index"
+  },
+  "tabBar": {
+    "textColor": "#dddddd",
+    "selectedColor": "#49a9ee",
+    "backgroundColor": "#ffffff",
+    "items": [
+      {
+        "pagePath": "pages/index/index",
+        "name": "首页",
+        "icon": "https://gw.alipayobjects.com/mdn/rms_107da2/afts/img/A*WLzeR4T4_oMAAAAAAAAAAABkARQnAQ",
+        "activeIcon": "https://gw.alipayobjects.com/mdn/rms_107da2/afts/img/A*IRA7QYpBww4AAAAAAAAAAABkARQnAQ"
+      },
+      {
+        "pagePath": "pages/setting/setting",
+        "name": "设置",
+        "icon": "https://gw.alipayobjects.com/mdn/rms_107da2/afts/img/A*n1f8SYBo_RkAAAAAAAAAAABkARQnAQ",
+        "activeIcon": "https://gw.alipayobjects.com/mdn/rms_107da2/afts/img/A*q2eOQpQEzDsAAAAAAAAAAABkARQnAQ"
+      }
+    ]
+  },
+  "lazyCodeLoading": false,
+  "useDynamicPlugins": false
+}

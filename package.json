@@ -1,0 +1,16 @@
+{
+  "name": "alipay-ykf-xj",
+  "version": "1.0.0",
+  "description": "快速获取自己的二维码",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "antd-mini": "^2.30.1",
+    "dayjs": "^1.11.11",
+    "otpauth": "^9.1.3"
+  }
+}

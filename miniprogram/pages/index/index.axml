@@ -1,0 +1,74 @@
+
+  <view class="container">
+    <ant-notice
+    onTap="handleClose"
+    mode="closeable">
+    欢迎使用在线MFA验证器！
+  </ant-notice>
+  <view class="pb">
+    <view class="top-container">
+      <ant-input
+        placeholder="请输入搜索内容"
+        onChange="onChangeSearch"
+        className="search-bar"
+        focusClassName="search-bar-focus"
+        confirm-type="search"
+        allowClear
+        focus
+        onConfirm="onConfirm">
+        <ant-icon
+      slot="prefix"
+      type="SearchOutline" />
+      </ant-input>
+      <ant-icon
+      className="iconStyle"
+      slot="suffix" onTap="handleOpenBasic"
+      type="AddCircleOutline" />
+    </view>
+    <view a:if="{{data_list.length}}">
+      <card a:for="{{ data_list }}" code={{item.code}} title={{item.title}} progress={{item.progress}} a:for-index="index" index = {{index}}></card>
+    </view>
+    <view a:else>
+      <empty message="暂无数据">
+    </empty>
+    </view>
+
+    
+
+    <!-- <tab-bar class="align-down" items="{{ tabs }}"  activeStyle="color:green;align-self: flex-end;"/> -->
+  </view>
+
+  <!-- <view a:if="{{data_list.length}}" class="fixBottom"> -->
+    <!-- <ant-button
+    class="fullWidth"
+      type="primary"
+      onTap="addMFA">
+      添加MFA
+    </ant-button> -->
+<!-- </view> -->
+
+<view>
+  <!-- <popup visible={{basicShow}} maskClosable position="bottom" animation onClose="handlePopupClose" 
+  showCloseIcon="false" zIndex="99999">
+  <view class="addWrapper">
+    <view class="addStyle" onTap="addMFAByScanCode">
+      扫描二维码添加
+    </view>
+    <view class="addStyle" onTap="addMFAByInput">
+    输入激活码添加
+    </view>
+    <view class="cancel" onTap="cancelAdd">
+      取消
+      </view>
+  </view>
+</popup> -->
+
+<ant-action-sheet
+  title="请选择你要进行的操作"
+  visible="{{ visible }}"
+  actions="{{ actions }}"
+  onAction="handleAction"
+  onClose="handleCloseBasic" />
+</view>
+
+</view>

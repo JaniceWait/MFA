@@ -1,0 +1,22 @@
+<view class="container">
+    <view class="content">
+      <view class="section">
+        <view class="title">多种激活方式</view>
+        <view class="description">
+          二维码扫码激活、文本激活码激活
+        </view>
+      </view>
+      <view class="section">
+        <view class="title">多令牌绑定</view>
+        <view class="description">
+          支持绑定同时绑定和激活多个令牌，支持令牌便签功能，方便识别和管理令牌
+        </view>
+      </view>
+      <view class="section">
+        <view class="title">谷歌令牌</view>
+        <view class="description">
+          支持谷歌令牌，可以扫描谷歌令牌二维码
+        </view>
+      </view>
+    </view>
+</view>

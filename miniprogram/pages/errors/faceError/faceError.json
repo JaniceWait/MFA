@@ -1,0 +1,8 @@
+{
+  "defaultTitle": "人脸识别失败",
+  "usingComponents": {
+    "ant-empty": "antd-mini/es/Empty/index",
+    "ant-container": "antd-mini/es/Container/index",
+    "ant-button": "antd-mini/es/Button/index"
+  }
+}

@@ -1,0 +1,11 @@
+{
+
+  "window": {
+    "defaultTitle": "功能介绍"
+  },
+  "usingComponents": {
+    "ant-container": "antd-mini/es/Container/index"
+  },
+  "navigationBarTitleText": "功能介绍",
+  "styleIsolation": "apply-shared"
+}
