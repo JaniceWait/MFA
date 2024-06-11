@@ -25,11 +25,9 @@ Component({
     this.$page.addToCard(this)
   },
   didUpdate() {
-    console.log('1111112221111444555')
   },
   didUnmount() {},
   onLoad() {
-    console.log('1111111111111')
   },
   test(e){
     console.log(e,'eeeeeeeeeeee')
@@ -49,10 +47,11 @@ Component({
       this.showMenus()
     },
     editRemark(value,event){
+      this.hideMenus()
       this.$page.editRemark(value,event)
-      this.hideRemarks()
     },
     deleteItem(event,index){
+      this.hideMenus()
       this.$page.deleteItem(event)
     },hideMenus(){
       this.setData({

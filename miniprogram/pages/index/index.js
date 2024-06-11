@@ -32,7 +32,7 @@ Page({
   formatList:[],
   basicShow: false,
   },
-  card:[]
+  cards:[]
 ,
  async onLoad() {
 
@@ -413,9 +413,13 @@ Page({
     this.syncMFAInfoData(mfaInfos)
     this.saveToStroage(mfaInfos)
   },addToCard(cardThat){
-    let card = this.card;
-    card.push(cardThat)
+    let cards = this.cards;
+    cards.push(cardThat)
 
+  },handleCloseCardMenus(){
+    for (let i = 0; i < this.cards.length; i ++){
+      cards[i].hideMenus()
+    }
   },handleAction(item, index, e) {
     if (item.key === 'scan') {
         this.addMFAByScanCode()
