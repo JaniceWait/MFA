@@ -85,23 +85,22 @@ Page({
         type: 'qr', // 扫码类型，支持 qr、bar 和 datamatrix 三种类型，默认为 qr
         success: (res) => {
           console.log('扫码成功', res);
-        const curOtp = res.code;
-        let totp = OTPAuth.URI.parse(curOtp);
-        let curData = app.formatDate(new Date())
-        let name = `${totp.issuer}:${totp.label}`;  
+          const curOtp = res.code;
+          let totp = OTPAuth.URI.parse(curOtp);
+          let curData = app.formatDate(new Date())
+          let name = `${totp.issuer}:${totp.label}`;  
 
-        console.log(name)
-        const curMFAData = {
-          name : name,
-          joinTime: curData,
-          mfa: curOtp
-        }
-
-        console.log(curMFAData)
-        that.addToStore(curMFAData)
-
-
-        res.code
+          console.log(name)
+          const curMFAData = {
+            name : name,
+            joinTime: curData,
+            mfa: curOtp
+          }
+          const mfaInfos = that.data.mfaInfos
+          that.mfaInfos = [...mfaInfos, curMFAData];
+          that.addMFAInfoData(that.mfaInfos)
+          that.syncMFAInfoData(that.mfaInfos)
+          that.saveToStroage(that.mfaInfos)
 
         },
         fail: (res) => {
@@ -115,7 +114,7 @@ Page({
   },
   addToStore(curMFAData){
     const that = this;
-    my.getStorage({
+    my.getStorageSync({
       key: 'mfaInfos',
       success: (res) => {
         console.log(res);
@@ -126,7 +125,6 @@ Page({
           that.syncMFAInfoData(that.mfaInfos)
           that.saveToStroage(that.mfaInfos)
         }else{
-          const previousList = res.data;
           that.mfaInfos = [curMFAData];
           that.addMFAInfoData(that.mfaInfos)
           that.syncMFAInfoData(that.mfaInfos)
@@ -311,7 +309,7 @@ Page({
   ,
   //  format data
   addMFAInfoData(mfaInfos){
-
+    console.log(mfaInfos,"刷新数据")
     let formatedList = this.formatMFAInfoData(mfaInfos);
 
 
