@@ -13,5 +13,7 @@
 #### 2.2 设置页
 ![设置页](/miniprogram/image/img_1.png)
 
+### 线上体验
+![体验二维码](/miniprogram/image/img_2.png)
 
 
