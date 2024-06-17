@@ -1,0 +1,7 @@
+<view class="demo-empty">
+
+  <ant-empty
+    title="人脸识别中"
+    message="" >
+  </ant-empty>
+</view>

@@ -10,12 +10,12 @@ App({
     }]
   }, 
   async onLaunch(options) {
-
+    // 读取配置信息 并加入到全局数据中
+    this.readConfig();
     // 初始化阿里云的配置
     this.initAliCloud()
 
-    // 读取配置信息 并加入到全局数据中
-    this.readConfig();
+
 
   },
   onShow(options) {
@@ -35,21 +35,24 @@ App({
     return this.aliCloudContext;
   },
   startIfaaAuthentication() {
-    if (this.globalData.config.useFaceRecognition && my.canIUse('startIfaaAuthentication')) {
-      my.startIfaaAuthentication({
-        requestAuthModes: ['facial'],
-        challenge: 'MFA',
-        success(res) {
-          console.log(res.verifyId);
-        },
-        fail(res) {
-          // 认证失败
-          my.navigateTo({
-            url: '/pages/errors/faceError/faceError'
-          });
-        }
-      })
-    }
+    // 认证失败
+    my.navigateTo({
+      url: '/pages/faceIng/faceIng'
+    });
+    my.startIfaaAuthentication({
+      requestAuthModes: ['facial'],
+      challenge: 'MFA',
+      success(res) {
+        console.log(res.verifyId);
+        my.navigateBack(); // 返回上一页
+      },
+      fail(res) {
+        // 认证失败
+        my.navigateTo({
+          url: '/pages/errors/faceError/faceError'
+        });
+      }
+    })
   },
   // 格式化日期时间为YYYY-MM-DD HH:mm:ss
 formatDate(date) {
@@ -62,21 +65,21 @@ formatDate(date) {
   return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
 },
   readConfig() {
+    console.log("读取设置信息开始....")
     const fs = my.getFileSystemManager();
-    const that = this; // 保存页面实例的引用
-    fs.readFileSync({
-      filePath: `${my.env.USER_DATA_PATH}/config_data.json`, // 用户本地文件地址，
-      encoding: 'utf8',
-      success: res => {
-        console.log("读取文件成功", res.data)
-        // 将内容写入到全局信息中
-        that.globalData.config = JSON.parse(res.data)
+
+    const res = fs.readFileSync(`${my.env.USER_DATA_PATH}/config_data.json`, 'utf8');
+    if(res?.success){
+      console.log("读取文件成功", res.data)
+      console.log("文件读取成功.......")
+      // 将内容写入到全局信息中
+      this.globalData.config = JSON.parse(res.data)
+      if(this.globalData.config.useFaceRecognition && my.canIUse('startIfaaAuthentication')){
         this.startIfaaAuthentication();
-      },
-      fail(err) {
-        console.log("无需处理")
       }
-    });
+    }else{
+      console.log("无需处理",res)
+    }
   },
   saveConfig() {
     let config = this.globalData.config;

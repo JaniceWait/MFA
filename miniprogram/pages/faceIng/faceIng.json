@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "ant-empty": "antd-mini/es/Empty/index"
+  },
+  "styleIsolation": "apply-shared"
+}

@@ -23,15 +23,12 @@ Page({
     that.setData({
       'configs.facial': checked,
     });
+    console.log(checked)
     app.globalData.config.useFaceRecognition = checked
     app.saveConfig();
     if (checked){
       my.showToast({
         content: "人脸识别已开启",
-      });
-    }else{
-      my.showToast({
-        content: "设备不支持人脸识别",
       });
     }
   },
@@ -58,37 +55,63 @@ Page({
     let that = this
     if (!checked){
       
-      that.handleSetRadius(false,that)             
+      that.handleSetRadius(false,that)    
+      my.showToast({
+        content: "人脸识别已关闭",
+      }); 
       return
     }
 
     if (my.canIUse('checkIsSupportIfaaAuthentication')) {
       my.checkIsSupportIfaaAuthentication({
         success(res) {
-          if (res.supportMode.indexOf('facial')){
+          if (res.supportMode.indexOf('facial') !== -1){
             if (my.canIUse('checkIsIfaaEnrolledInDevice')) {
               my.checkIsIfaaEnrolledInDevice({
                 checkAuthMode: 'facial',
                 success(res) {
-                  that.handleSetRadius(checked,that)             
+                  my.startIfaaAuthentication({
+                    requestAuthModes: ['facial'],
+                    challenge: 'MFA',
+                    success(res) {
+                      console.log(res.verifyId);
+                      that.handleSetRadius(checked,that)             
+                    },
+                    fail(res) {
+                      // 认证失败
+                      that.handleSetRadius(false,that)   
+                      my.showToast({
+                        content: "开启人脸识别失败,请重新认证",
+                      });          
+                    }
+                  })
                 },
                 fail(res) {
-                  that.handleSetRadius(false,that)             
+                  that.handleSetRadius(false, that)
+                  that.notFoundFace()
                 }
               });
             }
           }else{
-            that.handleSetRadius(false,that)             
+            that.handleSetRadius(false,that)   
+            that.notFoundFace()
           }
         },
         fail(res) {
-          that.handleSetRadius(false,that)             
+          that.handleSetRadius(false,that)   
+          that.notFoundFace()
         }
       }) 
     }
   },
+  notFoundFace(){
+    my.showToast({
+      content: "设备不支持人脸识别",
+    });
+  },
   onLoad() {
-
-
+    this.setData({
+      'configs.facial':app.globalData.config.useFaceRecognition
+    });
   },
 });

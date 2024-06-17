@@ -4,9 +4,16 @@
         <text class="description">
           欢迎使用我们的应用程序！我们致力于为您提供最佳的用户体验和服务。如果您有任何问题或建议，请随时联系我们。
           觉得不错，请给我们Star一下
-          码云地址: <text onTap="onTapGitee">https://gitee.com/wuhun0301/mfa</text>
-          github地址: <text onTap="onTapGithub">https://github.com/baiyang0910/MFA</text>
+         
         </text>
+        <view>
+      <text  class="description">码云地址: <view><text onTap="onTapGitee">https://gitee.com/wuhun0301/mfa</text></view></text>
+        </view>
+        <view>
+        <text class="description">
+          github地址: <view><text onTap="onTapGithub">https://github.com/baiyang0910/MFA</text></view>
+        </text>
+        </view>
       </view>
     
   </ant-container>

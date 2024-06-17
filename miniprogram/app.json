@@ -7,7 +7,8 @@
     "pages/settings/feature-introduction/feature-introduction",
     "pages/errors/faceError/faceError",
     "pages/settings/gitee/gitee",
-    "pages/settings/github/github"
+    "pages/settings/github/github",
+    "pages/faceIng/faceIng"
   ],
   "window": {
     "defaultTitle": "在线MFA验证器",
