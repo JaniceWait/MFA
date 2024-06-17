@@ -1,7 +1,10 @@
 {
   "usingComponents": {
     "ant-container": "antd-mini/es/Container/index",
-    "ant-icon": "antd-mini/es/Icon/index"
+    "popover": "antd-mini/es/Popover/index",
+    "ant-icon": "antd-mini/es/Icon/index",
+    "list": "antd-mini/es//List/index",
+    "list-item": "antd-mini/es//List/ListItem/index"
   },
   "navigationBarTitleText": "关于我们",
   "styleIsolation": "apply-shared"

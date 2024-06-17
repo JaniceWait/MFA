@@ -44,7 +44,10 @@ App({
       challenge: 'MFA',
       success(res) {
         console.log(res.verifyId);
-        my.navigateBack(); // 返回上一页
+        my.reLaunch({
+          url: '/pages/index/index'
+        }
+        ); // 返回上一页
       },
       fail(res) {
         // 认证失败

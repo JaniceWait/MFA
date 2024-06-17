@@ -1,20 +1,50 @@
 <view class="container">
   <ant-container title="关于我们">
     <view class="content">
+      <text class="description">
+        欢迎使用我们的应用程序！我们致力于为您提供最佳的用户体验和服务。如果您有任何问题或建议，请随时联系我们。
+        觉得不错，请给我们Star一下
+
+      </text>
+      <view>
         <text class="description">
-          欢迎使用我们的应用程序！我们致力于为您提供最佳的用户体验和服务。如果您有任何问题或建议，请随时联系我们。
-          觉得不错，请给我们Star一下
-         
+          码云地址:
+            <popover
+                    placement="bottom-right"
+                    visible="{{ giteeVisible }}"
+                    style="display: inline-block; margin: 20px"
+                    onVisibleChange="handleGiteeVisibleChange"
+                    color="#fff"
+            >
+              <text>https://gitee.com/wuhun0301/mfa</text>
+              <list slot="content" className="popover" placement="top">
+                <list-item onTap="onTapGitee">
+                  复制
+                </list-item>
+              </list>
+            </popover>
         </text>
-        <view>
-      <text  class="description">码云地址: <view><text onTap="onTapGitee">https://gitee.com/wuhun0301/mfa</text></view></text>
-        </view>
-        <view>
-        <text class="description">
-          github地址: <view><text onTap="onTapGithub">https://github.com/baiyang0910/MFA</text></view>
-        </text>
-        </view>
       </view>
-    
+      <view>
+        <text class="description">
+          github地址:
+            <popover
+              placement="bottom-right"
+              visible="{{ githubVisible }}"
+              style="display: inline-block; margin: 20px"
+              onVisibleChange="handleGithubVisibleChange"
+              color="#fff"
+            >
+              <text>https://github.com/baiyang0910/MFA</text>
+              <list slot="content" className="popover" placement="top">
+                <list-item onTap="onTapGithub">
+                  复制
+                </list-item>
+              </list>
+            </popover>
+        </text>
+      </view>
+    </view>
+
   </ant-container>
 </view>
