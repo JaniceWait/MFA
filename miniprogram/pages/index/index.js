@@ -394,13 +394,6 @@ Page({
     mfaInfos[index].name = value
     this.updateData(mfaInfos)
 
-  },editRemark(value,event){
-    console.log(event)
-    let mfaInfos = this.data.mfaInfos;
-    let index = event.target.dataset.index
-    mfaInfos[index].name = value
-    this.updateData(mfaInfos)
-
   },deleteItem(event){
     let index = event.target.dataset.index
     let mfaInfos = this.data.mfaInfos;
