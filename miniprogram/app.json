@@ -26,14 +26,14 @@
       {
         "pagePath": "pages/index/index",
         "name": "首页",
-        "icon": "https://gw.alipayobjects.com/mdn/rms_107da2/afts/img/A*WLzeR4T4_oMAAAAAAAAAAABkARQnAQ",
-        "activeIcon": "https://gw.alipayobjects.com/mdn/rms_107da2/afts/img/A*IRA7QYpBww4AAAAAAAAAAABkARQnAQ"
+        "icon": "image/home.png",
+        "activeIcon": "image/home_active.png"
       },
       {
         "pagePath": "pages/setting/setting",
         "name": "设置",
-        "icon": "https://gw.alipayobjects.com/mdn/rms_107da2/afts/img/A*n1f8SYBo_RkAAAAAAAAAAABkARQnAQ",
-        "activeIcon": "https://gw.alipayobjects.com/mdn/rms_107da2/afts/img/A*q2eOQpQEzDsAAAAAAAAAAABkARQnAQ"
+        "icon": "image/setting.png",
+        "activeIcon": "image/setting_active.png"
       }
     ]
   },

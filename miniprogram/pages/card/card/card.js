@@ -29,18 +29,7 @@ Component({
   didUnmount() {},
   onLoad() {
   },
-  test(e){
-    console.log(e,'eeeeeeeeeeee')
-  },
   onReady() {
-    console.log("尝试读取内容",this.MFAStrList)
-        // 开始定时器，每隔1000毫秒（1秒）执行一次tick函数
-        const timerId = setInterval(this.refreshData.bind(this), 1000);
-        // 将定时器的 ID 保存到数据中
-        this.setData({
-          timerId: timerId
-        });
-    // 页面加载完成
   },
   methods: {
     showMore(item) {
