@@ -47,7 +47,7 @@ Component({
       this.showMenus()
     },
     editRemark(value,event){
-      this.hideMenus()
+      this.hideRemarks()
       this.$page.editRemark(value,event)
     },
     deleteItem(event,index){
@@ -87,12 +87,11 @@ Component({
     },handleEditRemarkRef(value,event){
       this.input = event
       this.inputValue = value
-
     },async submitEditRemark(){
-      console.log(this.input)
-
+      if (!this.input){
+        return
+      }
       this.editRemark(this.inputValue,this.input)
-
     }
   }
 });
